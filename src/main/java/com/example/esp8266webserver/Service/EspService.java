@@ -3,11 +3,12 @@ package com.example.esp8266webserver.Service;
 import com.example.esp8266webserver.Model.Board;
 import com.example.esp8266webserver.Model.BoardInterface;
 import com.example.esp8266webserver.Model.Pin;
+import lombok.Getter;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+@Getter
 @Service
 public class EspService implements BoardInterface {
 
@@ -28,10 +29,6 @@ public class EspService implements BoardInterface {
 
         System.out.println(getPinById(pin.getId()));
 
-    }
-
-    public Board getBoard() {
-        return board;
     }
 
     public List<Pin> getBoardPins() {
