@@ -1,13 +1,14 @@
 package com.example.esp8266webserver.Service;
-
+import com.example.esp8266webserver.DTOs.BoardResponse;
 import com.example.esp8266webserver.Model.Board;
 import com.example.esp8266webserver.Model.BoardInterface;
 import com.example.esp8266webserver.Model.Pin;
 import lombok.Getter;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.time.Instant;
+import java.util.*;
+
 @Getter
 @Service
 public class EspService implements BoardInterface {
@@ -35,6 +36,17 @@ public class EspService implements BoardInterface {
 
         return new ArrayList<>(board.getPins().values());
     }
+
+    public BoardResponse addTimeToResponse() {
+
+        BoardResponse boardResponse = new BoardResponse();
+        boardResponse.setBoardList(getBoardPins());
+
+        boardResponse.setTime(Instant.now().toString());
+
+        return boardResponse;
+    }
+
 
     @Override
     public Board createBoard() {

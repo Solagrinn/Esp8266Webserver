@@ -3,7 +3,7 @@ package com.example.esp8266webserver.Model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -30,6 +30,7 @@ public class Board {
         pins.put("13", new Pin("13","0","TX"));
         pins.put("14", new Pin("14","0","G"));
         pins.put("15", new Pin("15","0","3.3v"));
+
     }
 
 

@@ -1,5 +1,6 @@
 package com.example.esp8266webserver.Controller;
 
+import com.example.esp8266webserver.DTOs.BoardResponse;
 import com.example.esp8266webserver.DTOs.PinRequest;
 import com.example.esp8266webserver.Model.Board;
 import com.example.esp8266webserver.Model.Pin;
@@ -45,6 +46,11 @@ public class EspController {
     @GetMapping("/getboardjson")
     public List<Pin> sendBoardDataString(){
         return espService.getBoardPins();
+    }
+
+    @GetMapping("/getboardwithtime")
+    public BoardResponse sendBoardResponse(){
+        return espService.addTimeToResponse();
     }
 
 
